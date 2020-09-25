@@ -1,13 +1,25 @@
-class Model{
- bet(){
-    
-    var toss= Math.floor((Math.random() * 2));
-    if(toss ==1){
-        console.log("Won");
-    }
-    else{
-        console.log("Loose");
-    }
-}
-}
-module.exports=new Model();
+ class Model{
+     Simulation(){
+        var stake = 100;
+        var day = 1;
+        var winStake = 100;
+        var lostStake = 100;
+        var r1,r2;
+        while(day == 1){
+        var Random = Math.floor((Math.random()*10));
+        r1= Random%10;
+        r2=r1%2;
+        if(r2 == 0){
+        lostStake = lostStake-1;
+        console.log("Stake after lost ="+lostStake);
+        }
+        else{
+            winStake = winStake+1;
+            console.log("Stake after lost ="+winStake);
+        }
+        day = day+1;
+       }
+     }
+ }
+ module.exports = new Model();
+ 
