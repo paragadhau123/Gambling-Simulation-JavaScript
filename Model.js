@@ -11,11 +11,11 @@
         r2=r1%2;
         if(r2 == 0){
         lostStake = lostStake-1;
-        console.log("Stake after lost ="+lostStake);
+        console.log("********Gambler Loose**********");
         }
         else{
             winStake = winStake+1;
-            console.log("Stake after lost ="+winStake);
+            console.log("********Gambler Win**********");
         }
         day = day+1;
        }
