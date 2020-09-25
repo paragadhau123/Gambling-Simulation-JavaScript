@@ -3,6 +3,8 @@ class Controller{
         console.log("Welcome To Gambling Simulation");
         const print = require('./Model');
         print.Simulation();
+            
+        
     }
 }
 const object = new Controller();

@@ -1,5 +1,8 @@
  class Model{
-     Simulation(){
+     Simulation(){    
+        var winAmount =0;
+        var lostAmount =0;
+        do {
         var stake = 100;
         var day = 1;
         var r1,r2;
@@ -9,8 +12,7 @@
         while(day<=30){
             var winStake = 100;
             var lostStake = 100;
-            var winAmount;
-            var lostAmount;
+            
         while(winStake<150 || lostStake>50){
         var Random = Math.floor((Math.random()*10));
         r1= Random%10;
@@ -38,7 +40,7 @@
         }
        day=day+1;
      }
-   
+  
     var luckyDay = 0;
     var unluckyDay = 0;
     var high = array[0];
@@ -58,8 +60,9 @@
 
         }
         console.log("Luckiest day is day : "+luckyDay+" and He won : "+high);
-        console.log("Unluckiest day is day : "+unluckyDay+" and He lost : "+low);
-    }
+        console.log("Unluckiest day is day : "+unluckyDay+" and He lost : "+low);        
+   } while (winAmount>lostAmount);    
+  }
 }
  module.exports = new Model();
  
