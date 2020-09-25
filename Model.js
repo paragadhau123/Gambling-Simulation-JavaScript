@@ -1,6 +1,7 @@
  class Model{
      Simulation()    
        {
+
         var winAmount =0;
         var lostAmount =0;
 
@@ -39,14 +40,15 @@
             winAmount=winStake-stake;
             lostAmount=stake-lostStake;
             console.log("----------------------------------------------------------------------------------");
-            console.log("Win amount of day"+day+" is :"+winAmount+" and Lost amount of day"+day+" is :"+lostAmount);
+            console.log("Day => "+day);
+            console.log("Win amount is :"+winAmount+" and Lost amount is :"+lostAmount);
         if( winAmount > lostAmount )
         {
-             console.log("Day"+day+" win by "+(winAmount-lostAmount));
+             console.log("Day "+day+" win by "+(winAmount-lostAmount));
         }
         else
         {
-             console.log("Day"+day+" lost by "+(lostAmount-winAmount));
+             console.log("Day "+day+" lost by "+(lostAmount-winAmount));
         }
        day=day+1;
      }
