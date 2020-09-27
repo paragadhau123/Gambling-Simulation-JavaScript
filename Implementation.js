@@ -24,15 +24,18 @@ class Implementation {
 
         while (winStake < 150 || lostStake > 50) {
           var random = this.GenerateRandomNumber();
-          if (random == 0) {
-            lostStake = lostStake - 1;
-            dailyWin = dailyWin - 1;
-            array[day - 1] = dailyWin;
-          }
-          else {
-            winStake = winStake + 1;
-            dailyWin = dailyWin + 1;
-            array[day - 1] = dailyWin;
+          switch (random) {
+            case 0:
+              lostStake = lostStake - 1;
+              dailyWin = dailyWin - 1;
+              array[day - 1] = dailyWin;
+              break;
+
+            case 1:
+              winStake = winStake + 1;
+              dailyWin = dailyWin + 1;
+              array[day - 1] = dailyWin;
+              break;
           }
         }
         winAmount = winStake - stake;
@@ -66,7 +69,7 @@ class Implementation {
         low = array[i];
         unluckyDay = i + 1;
       }
-     }
+    }
     console.log("Luckiest day is day : " + luckyDay + " and He won : " + high);
     console.log("Unluckiest day is day : " + unluckyDay + " and He lost : " + low);
   }
