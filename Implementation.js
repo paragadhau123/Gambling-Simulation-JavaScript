@@ -1,29 +1,29 @@
 let array = new Array(30);
-var stake = 100;
+let stake = 100;
 
 class Implementation {
 
-  GenerateRandomNumber() {
-    var r1, r2;
-    var Random = Math.floor((Math.random() * 10));
+  GenerateRandomNumber = () => {
+    let r1, r2;
+    let Random = Math.floor((Math.random() * 10));
     r1 = Random % 10;
     r2 = r1 % 2;
     return r2;
   }
 
-  Simulation(maxDay) {
-    var winAmount = 0;
-    var lostAmount = 0;
+  Simulation = (maxDay) => {
+    let winAmount = 0;
+    let lostAmount = 0;
     do {
-      var day = 1;
-      var dailyWin = 0;
+      let day = 1;
+      let dailyWin = 0;
 
       while (day <= maxDay) {
-        var winStake = 100;
-        var lostStake = 100;
+        let winStake = 100;
+        let lostStake = 100;
 
         while (winStake < 150 || lostStake > 50) {
-          var random = this.GenerateRandomNumber();
+          let random = this.GenerateRandomNumber();
           switch (random) {
             case 0:
               lostStake = lostStake - 1;
@@ -55,12 +55,12 @@ class Implementation {
     } while (winAmount > lostAmount);
   }
 
-  GetLuckyUnluckyDay(array) {
-    var luckyDay = 0;
-    var unluckyDay = 0;
-    var high = array[0];
-    var low = array[0];
-    for (var i = 1; i < array.length; i++) {
+  GetLuckyUnluckyDay = (array) => {
+    let luckyDay = 0;
+    let unluckyDay = 0;
+    let high = array[0];
+    let low = array[0];
+    for (let i = 1; i < array.length; i++) {
       if (high < array[i]) {
         high = array[i];
         luckyDay = i + 1;
